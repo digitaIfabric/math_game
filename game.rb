@@ -12,7 +12,7 @@ module MathGame
   # Initialize new game
   def initialize
     # Initialize turn 1
-    @turn = 1
+    @turn = 0
     # 2 instances of the player class @instances
     @player1 = Player.new(1)
     @player2 = Player.new(2)
@@ -22,9 +22,14 @@ module MathGame
   # Definition of new turn
   def start_turn
     puts "----- NEW TURN -----"
-
-    active = @player2
-    Turn.new(active)
+    @turn += 1
+    if (@turn.odd?)
+      active = @player1
+      Turn.new(active)
+    else
+      active = @player2
+      Turn.new(active)
+    end
 
     if (game_over?)
       winner_message
