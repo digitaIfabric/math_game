@@ -4,34 +4,44 @@
 # What does #{rand_num[0]} plus #{rand_num[1]} equal?
 # P1 #{livesP1}/3 vs P2 #{livesP2}/3
 
+module MathGame
+  class Game
 
-# Initialize new game
-# Initialize round 1
-# 2 instances of the player class @instances
-# Check if game over
+  # Initialize new game
+  def initialize
+    # Initialize turn 1
+    @turn1 = Turn.new
+    # 2 instances of the player class @instances
+    @player1 = Player.new(P1)
+    # @player2 = Player.new(P2)
+    # start game MathGame.start
+  end
+  # Check if game over
 
-# Definition of new turn
-# Print ----- NEW TURN -----
+  # Definition of new turn
+
+  def start_game
+    puts "Start of the game"
+    puts "----- NEW TURN -----"
 
 
-# Check game over (player lives >0)
-def game_over?
+  end
 
-# Print ----- GAME OVER -----
+  # Check game over (player lives > 0)
+  def game_over?
+
+  # Print ----- GAME OVER -----
+  end
+
+
+
+  # Set the message that displays winner
+  def winner_message
+
+  end
+
+
+  end
 end
-
-
-
-# Set the message that displays winner
-def winner_message
-
-end
-
-
-
-
-
-
-
 
 
