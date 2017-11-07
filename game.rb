@@ -8,7 +8,7 @@ module MathGame
   class Game
 
   # Initialize new game
-  def initialize
+  def initialize game
     # Initialize turn 1
     @turn1 = Turn.new
     # 2 instances of the player class @instances
