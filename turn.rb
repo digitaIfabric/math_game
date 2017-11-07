@@ -9,7 +9,7 @@ module MathGame
     end
 
     def ask_question(active)
-      puts "Player1 what is #{@number1} plus #{@number2} ?"
+      puts "#{active.id} what is #{@number1} plus #{@number2} ?"
       # Use gets.chomp to get input from users and puts for output
       p_answer = gets.chomp.to_i
 

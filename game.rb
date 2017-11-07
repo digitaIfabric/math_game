@@ -7,39 +7,51 @@
 module MathGame
   class Game
 
+    attr_accessor :player1, :player2, :turn
+
   # Initialize new game
-  def initialize game
+  def initialize
     # Initialize turn 1
-    @turn1 = Turn.new
+    @turn = 1
     # 2 instances of the player class @instances
-    @player1 = Player.new(P1)
-    # @player2 = Player.new(P2)
-    # start game MathGame.start
+    @player1 = Player.new(1)
+    @player2 = Player.new(2)
+    start_turn
   end
-  # Check if game over
 
   # Definition of new turn
-
-  def start_game
-    puts "Start of the game"
+  def start_turn
     puts "----- NEW TURN -----"
 
+    active = @player2
+    Turn.new(active)
 
+    if (game_over?)
+      winner_message
+      puts "----- GAME OVER -----"
+    else
+      player_lives
+      start_turn
+    end
   end
 
   # Check game over (player lives > 0)
   def game_over?
-
-  # Print ----- GAME OVER -----
+    (@player1.lives == 0) || (@player2.lives == 0)
   end
 
-
+  def player_lives
+    puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3 \n\n"
+  end
 
   # Set the message that displays winner
   def winner_message
-
+    if @player1.lives > @player2.lives
+      puts "P1 wins with a score of #{@player1.lives}/3 \n\n"
+    else
+      puts "P2 wins with a score of #{@player2.lives}/3 \n\n"
+    end
   end
-
 
   end
 end
