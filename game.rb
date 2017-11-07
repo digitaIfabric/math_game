@@ -1,9 +1,3 @@
-# Use gets.chomp to get input from users and puts for output
-# Isolate your I/O logic to one or two classes. Don't allow all your classes to interact (gets/puts) with the User
-# Use puts, raise some_val.inspect, and byebug to help with debugging
-# What does #{rand_num[0]} plus #{rand_num[1]} equal?
-# P1 #{livesP1}/3 vs P2 #{livesP2}/3
-
 module MathGame
   class Game
 
