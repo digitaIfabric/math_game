@@ -1,9 +1,8 @@
 module MathGame
   class Game
 
-    attr_accessor :player1, :player2, :turn
+  attr_accessor :player1, :player2, :turn
 
-  # Initialize new game
   def initialize
     # Initialize turn 1
     @turn = 0
@@ -40,15 +39,15 @@ module MathGame
   end
 
   def player_lives
-    puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3 \n\n"
+    puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3 \n"
   end
 
   # Set the message that displays winner
   def winner_message
     if @player1.lives > @player2.lives
-      puts "P1 wins with a score of #{@player1.lives}/3 \n\n"
+      puts "P1 wins with a score of #{@player1.lives}/3 \n"
     else
-      puts "P2 wins with a score of #{@player2.lives}/3 \n\n"
+      puts "P2 wins with a score of #{@player2.lives}/3 \n"
     end
   end
 
